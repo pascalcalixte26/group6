@@ -1,0 +1,196 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>New Tour</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+   #userbrief {
+       border: solid black 1px;
+       width: 90%;
+       margin: 0 auto;
+       padding: 20px;
+   }
+   #navbar {
+       border: solid black 1px;
+       width: 90%;
+       margin: 0 auto;
+       padding: 20px;
+   }
+   #infograbber {
+       border: solid black 1px;
+       width: 90%;
+       margin: 0 auto;
+       padding: 20px;
+   }
+   #travel {
+       border: solid black 1px;
+       width: 90%;
+       margin: 0 auto;
+       padding: 20px;
+   }
+   #summary {
+       border: solid black 1px;
+       width: 90%;
+       margin: 0 auto;
+       padding: 20px;
+   }
+   #weather {
+       border: solid black 1px;
+       width: 90%;
+       margin: 0 auto;
+       padding: 20px;
+   }
+
+</style>
+<body>
+   <div id="navbar">
+           <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+                   <a class="navbar-brand" href="#">Navbar</a>
+                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                   </button>
+                   <div class="collapse navbar-collapse" id="navbarNav">
+                     <ul class="navbar-nav">
+                       <li class="nav-item active">
+                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                       </li>
+                       <li class="nav-item">
+                         <a class="nav-link" href="#">Features</a>
+                       </li>
+                       <li class="nav-item">
+                         <a class="nav-link" href="#">Pricing</a>
+                       </li>
+                       <li class="nav-item">
+                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                       </li>
+                     </ul>
+                   </div>
+                 </nav>
+
+                 <div id="unsplash">
+                     Unsplash galary goes here.
+
+
+
+                 </div>
+
+                 <div>
+                       <h1>TourST</h1>
+
+                       <h3>Simple Trip Planning</h3>
+
+
+                 </div>
+   </div>
+   <div id="userbrief">
+
+       <h4>(User Briefing)</h4>
+       <p class="brief">This website helps you plan your trip around an interest </p>
+       <p class="brief">Current interests supported: (link) music </p>
+   </div>
+   <div id="infograbber">
+       <h4>(interest info grabber)</h4>
+
+<form>
+               <div class="form-row align-items-center">
+                 <div class="col-auto">
+                   <label class="sr-only" for="inlineFormInput">Name</label>
+                   <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="(input form) artist name">
+                 </div>
+                <div class="col-auto">
+                   <button type="userSubmit" class="btn btn-primary mb-2">Submit</button>
+                   
+                </div>
+               </div>
+             </form>
+
+             <p>We display 10 upcoming events
+
+                   (events display location, date, and promo picture)
+
+                   (user picks an event) </p>
+
+               <p>If no event found modals to try a different artist </p>
+   </div>
+   <div id="dispResults"></div>
+   <div id="travel">
+       <p>"Great"</p>
+       <p>Will you be traveling to this event?</p>
+       <p>If no give them more event info and possibly some other value add</p>
+       <p>If yes then we grab location and show travel options</p>
+       <p>(we have a default as +/- 2 days and possibly make that dynamic if we figure it out ) </p>
+   </div>
+   <div id="summary">
+       <h3>Trip Summary</h3>
+       <ul class="list-group">
+               <li class="list-group-item d-flex justify-content-between align-items-center">
+                 Venue (Concert)
+                 <span class="badge badge-primary badge-pill">$(ticket cost)</span>
+               </li>
+               <li class="list-group-item d-flex justify-content-between align-items-center">
+                 Airfare
+                 <span class="badge badge-primary badge-pill">$(Airfare cost)</span>
+               </li>
+               <li class="list-group-item d-flex justify-content-between align-items-center">
+                 Hotel
+                 <span class="badge badge-primary badge-pill">$(Hotel cost)</span>
+               </li>
+               <li class="list-group-item d-flex justify-content-between align-items-center">
+                 Average location spending from budget api
+                 <span class="badge badge-primary badge-pill">$(spending budget)</span>
+               </li>
+             </ul>
+   </div>
+   <div id="weather">
+       <h3>5-day Weather Forecast</h3>
+       <p>pull from weather channel api with 5 day forecast</p>
+       <p>if possible pull graphs</p>
+   </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+// Event listener for all button elements
+$("#userSubmit").on("click", function() {
+      // In this case, the "this" keyword refers to the button that was clicked
+      var person = $(this).attr("data-person");
+      var keyword = "cardi+b";
+      // Constructing a URL to search Giphy for the name of the person who said the quote
+    var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&apikey=Hvspzyaf9sT79FRlHNKREkFSLhoIZkDW";
+
+    $.ajax({url: queryURL, method: "GET" }).then(function(response) {
+    var jString = JSON.stringify(response);
+    var eventObj = JSON.parse(jString);
+
+    // var objectQ = masterObj[1];
+    for (var i=0; i < 10; i++) {
+    var listDiv = $("<div>");
+    var eventName = $("<p>").text("Event: " + eventObj._embedded.events[i].name);
+    var eventPic = $("<img>").attr("src", eventObj._embedded.events[i].images[i].url);
+    var eventDates = $("<p>").text("Event Date: " + eventObj._embedded.events[i].dates.start.localDate);
+    var eventVenueName = $("<p>").text("Venue: " + eventObj._embedded.events[i]._embedded.venues[0].name);
+    var eventVenueCity = $("<p>").text("City: " + eventObj._embedded.events[i]._embedded.venues[0].city.name + ", "+ eventObj._embedded.events[i]._embedded.venues[0].state.stateCode);
+    var eventPrices = $("<p>").text("Min Price: ");
+
+    // console.log("Event Name " + eventObj._embedded.events[i].name);
+    // console.log("Image: " + eventObj._embedded.events[i].images[1]);
+    // console.log("");
+    eventTotal = $("<div>").append(
+    eventName,
+    eventPic,
+    eventDates,
+    eventVenueName,
+    eventVenueCity
+    );
+
+    $("#dispResults").append(eventTotal);
+    }
+});
+
+});
+</script>
+
+</body>
+</html>

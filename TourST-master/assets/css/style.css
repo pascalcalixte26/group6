@@ -1,0 +1,113 @@
+/* * {
+  border: solid red 1px;
+} */
+#home {
+    /* background-image: url("/assets/images/image_4.jpg"); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    /* height: 100%; */
+    /* background-attachment: fixed; */
+    /* width: 100%; */
+    }
+
+#picturewrapper {
+    background: url("/assets/images/image_4.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+    .navbar {
+        background-color: black !important;
+
+    }
+
+    .nav-link {
+        color: whitesmoke;
+
+    }
+    .container {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+    }
+    #userBrief {
+        color:whitesmoke;
+   
+    }
+    .navbar-brand {
+        color: #56DAA1 !important;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .navbar-nav a:hover {
+        color: #56DAA1 !important;
+    
+    }
+
+    #submitbtn {
+        background-color:#56DAA1;
+        border-color: #56DAA1;
+    }
+
+    #fineprint {
+        font-size: 10px;
+    }
+    .navbar-toggler  {
+      /* background-color: #56DAA1 !important; */
+  }
+
+  img {
+  max-height: 200px;
+
+}
+
+#resultsDisplay {
+  margin-left: 30px;
+  /* align-content: center; */
+}
+
+.card-body {
+  color: whitesmoke;
+  background-color: black;
+  opacity: 0.9;
+}
+  .card-footer {
+    background-color: black;
+    opacity: 0.9;
+    text-size-adjust: 125%;
+  }
+
+  .card {
+    width: 250px !important;
+    /* max-height: 50px !important; */
+    color: whitesmoke !important;
+    background-color: black !important;
+    opacity: 0.9;
+    font-size: 15px;
+    align-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: table;
+    clear: both;
+
+  }
+
+  .btn-outline-primary {
+      background-color: #56DAA1 !important;
+      color: black !important;
+      outline-color: black !important;
+  }
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .card-columns {
+    column-count: 2;
+  }
+}
+
+#footerInfo {
+  color: #56DAA1 !important;
+  font-size: 150%;
+  padding: 4px;
+}

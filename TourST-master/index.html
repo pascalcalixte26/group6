@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TourST</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+  
+    <!-- Link to Bootstrap-->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+   
+    <!--Link to CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
+    <!-- Link to jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+
+<body id="picturewrapper">
+  <div class="entire page">
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+<div class="container">
+<a class="navbar-brand" href="#">TourST</a>
+<button class="navbar-toggler" type="button" data-toggle="dropdown" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item active">
+<a class="nav-link" href="#">Home
+<span class="sr-only">(current)</span>
+</a>
+</li>
+<li class="nav-item active">
+<a class="nav-link" href="#">Event</a>
+</li>
+<li class="nav-item active">
+<a class="nav-link" href="#">Flight</a>
+</li>
+<li class="nav-item active">
+<a class="nav-link" href="#">Total</a>
+</li>
+</ul>
+</div>
+
+</div>
+</nav>
+<div class="appSection">
+appSection
+<div id="briefing">
+user brief
+<p>This website helps you plan your trip around an interest
+Current interests supported: (link) music</p>
+</div>
+
+
+
+<!--adding div to for spacer between content-->
+
+<!--Home Section for search bar and user brief-->
+<section id="home">
+<div class="container" id="userBrief">
+<div class="row">
+<div class="col-lg-6">
+
+<!--User Brief-->
+<h1 class="mt-5">Any Interest. Anywhere.</h1>
+<p>TourST makes it easy for you to explore events based on your interests and plan an amazing experience around it.  Just type it into the search bar to get started. </p>
+<p id=fineprint>Currently availabe for music events within the United States</p>
+
+
+<!--Search bar as sub rows within the div-->
+<form>
+<div class="form-row align-items-center">
+<div class="col-lg-9">
+<label class="sr-only" for="inlineFormInput">Name</label>
+<input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="What's your interest?">
+</div>
+
+<div class="col-auto">
+<button type="submit" class="btn btn-primary mb-2" id="submitbtn">Submit</button>
+</div>
+</div>
+</form>
+<br>
+<br>
+<br>
+</div>
+
+<!--Placeholder for event cards-->
+<div class="col-lg-12" class="container-fluid"></div>
+<div id="resultsContainer" class="container">
+<div id="resultsDisplay"  class="card-columns"></div>
+<div id="userLocation">
+</div>
+</div>
+</div>
+
+<br>
+<br>
+<br>
+
+<!--Placeholder for travel cards-->
+<div class="col-lg-12"></div>
+<div id="travelContainer" class="container">
+<div id="resultsDisplay"  class="card-columns"></div>
+<div id="userLocation">
+</div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!--itemized breakdown of trip-->
+
+<!--Placeholder for event total cards-->
+<div class="row">
+<div class="col-lg-6"></div>
+<div id="eventTotalContainer" class="container">
+<div id="resultsDisplay"  class="card-columns"></div>
+<div id="userLocation">
+</div>
+</div>
+</div>
+
+<!--Placeholder for event total cards-->
+<div class="col-lg-6"></div>
+<div id="travelTotalContainer" class="container">
+<div id="resultsDisplay"  class="card-columns"></div>
+<div id="userLocation">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<br>
+<br>
+
+
+
+<div class="card fixed-bottom">
+<div class="card-body" id="footerInfo">
+Trip Total:
+</div>
+</div>
+
+</section>
+
+
+
+</div>
+<footer>
+<!-- Link to JS for Event and Travel info-->
+<script src="assets/javascript/app.js"></script>
+
+<!-- Link to JS for background image change-->
+<!-- <script src="assets/javascript/app2.js"></script> -->
+
+<!--Bootstrap jquery links-->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+</footer>
+
+</body>
+
+</html>
